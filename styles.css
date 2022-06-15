@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap");
+
 /* BASE CSS */
 html,
 body,
@@ -152,16 +154,14 @@ select {
   --primary-color: #ff0000;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
-
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   background-color: var(--background);
   color: var(--primary-color);
   margin: 64px auto;
-  width: 960px;
+  max-width: 960px;
   text-align: center;
 }
 
@@ -171,4 +171,55 @@ h1 {
 
 span {
   margin: 0 8px;
+}
+
+circle {
+  fill: var(--primary-color);
+  stroke: var(--background);
+  stroke-width: 2px;
+}
+
+line {
+  stroke-width: 1px;
+  stroke-dasharray: 2 8;
+}
+
+path.domain {
+  stroke-width: 2px;
+}
+
+text.x-axis,
+text.y-axis {
+  fill: var(--primary-color);
+  font-size: 24px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+g.city rect {
+  fill: var(--primary-color);
+  opacity: 0;
+  transition: 0.5s;
+}
+g.city:hover rect,
+g.city:hover text {
+  opacity: 1;
+}
+
+g.city text {
+  fill: var(--background);
+  text-anchor: middle;
+  font-size: 14px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+@media (max-width: 900px) {
+  body {
+    margin: 20px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
 }
